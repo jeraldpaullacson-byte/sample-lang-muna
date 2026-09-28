@@ -180,163 +180,90 @@ button:hover {
     display: block;
 }
 
-<div class="slide active" data-slide="1">
-    <h2>Before anything else...</h2>
 
-    <p class="message">
-        Hi, I know this is super random and might confuse you, but hear me out.
-        U-unahin ko nang mag-sorry before anything else kasi this is not my typical
-        message and I'm sure magugulat ka, but I have to say this.
-    </p>
+/* SLIDE 1 */
 
-    <p class="message">
-        I have to let the air out kasi I think you deserve to know this.
-    </p>
+.slide-1-in {
+    animation: slide1In 0.7s ease forwards;
+}
 
-    <p class="message">
-        I really wanna start at the beginning pero yah, that's the problem kasi
-        hindi ko talaga maalala kung kailan ko 'to unang na-feel.
-    </p>
+@keyframes slide1In {
 
-    <p class="message">
-        I do remember noong 2nd contract ko, I already had this feeling na.
-        Hinahayaan ko lang kasi hindi naman siya masyadong big deal sa'kin that time.
-    </p>
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
 
-    <p class="message">
-        Akala ko noong bumalik ako sa ex ko mawawala na 'to.
-        Well, sounds weird pero months after we broke up, realizing everything,
-        feel ko andito parin.
-    </p>
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
-    <p class="message">
-        I don't wanna make this story long, pero remember that time na sinabi ko
-        yung three major reasons bakit hindi ako kayang mag-commit/enter into a
-        relationship? I hope naaalala mo pa HAHA.
-    </p>
-
-    <p class="message">
-        I told you the two reasons, pero yung remaining one hindi ko sinabi.
-    </p>
-
-    <p class="message">
-        Well, Trixie, it's you.
-    </p>
-</div>
+}
 
 
-<div class="slide" data-slide="2">
-    <h2>So... here's the truth.</h2>
+/* SLIDE 2 */
 
-    <p class="message">
-        Matagal na'kong confused about this, pero I'm sure with what I'm feeling now.
-    </p>
+.slide-2-in {
+    animation: slide2In 0.7s ease forwards;
+}
 
-    <p class="message">
-        And I'm really sorry for telling you this, but I would rather ruin our
-        friendship kaysa pagsisihan ko na hindi ko sinabi 'to.
-    </p>
+@keyframes slide2In {
 
-    <p class="message">
-        You deserve to know this kasi ayoko ring magsinungaling through my actions
-        and treatments. Hindi ko kayang i-peke yung mga kilos ko just to keep our
-        friendship.
-    </p>
+    from {
+        opacity: 0;
+        transform: translateX(45px);
+    }
 
-    <p class="message highlight">
-        I like you, Trixie. A lot. And it's not platonic.
-    </p>
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 
-    <p class="message">
-        Don't worry, I'm not going to do anything with these feelings.
-        I'm not confessing because I'm trying to shoot my shot.
-        I'm confessing because I want to be honest with you, that's all.
-    </p>
-
-    <p class="message">
-        I have a huge respect for you, and I hope this sudden message won't
-        destroy your peace of mind.
-    </p>
-
-    <p class="message">
-        I'm still in the process of healing from everything that happened to me,
-        and telling you this is my way of being completely honest with you
-        and with myself.
-    </p>
-
-    <p class="message">
-        Ayoko ng may tinatago ako, even from myself.
-    </p>
-</div>
+}
 
 
-<div class="slide" data-slide="3">
-    <h2>I just wanted to be honest.</h2>
+/* SLIDE 3 */
 
-    <p class="message">
-        Probably nakaka-ramdam or halata ka na before because of the way I treated
-        you and some people.
-    </p>
+.slide-3-in {
+    animation: slide3In 0.8s ease forwards;
+}
 
-    <p class="message">
-        If you did, well yah, kasi I'm trying to be subtle lang.
-        Ayoko masira yung friendship natin.
-    </p>
+@keyframes slide3In {
 
-    <p class="message">
-        All those years, I always stayed at that threshold.
-        I never tried to cross the line kasi ayoko rin namang sirain lahat.
-    </p>
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
 
-    <p class="message highlight">
-        Pero ngayon, I'm taking that chance.
-    </p>
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 
-    <p class="message">
-        I'm really scared while writing this, and honestly wala akong idea
-        kung ano mangyayari after I say this.
-    </p>
-
-    <p class="message">
-        But don't worry, Trix. I'm not expecting any response from you.
-        Gusto ko lang sabihin sa'yo kung ano yung nafi-feel ko
-        and I hope wag ka magalit HAHA.
-    </p>
-</div>
+}
 
 
-<div class="slide" data-slide="4">
-    <h2>One last thing...</h2>
+/* SLIDE 4 */
 
-    <p class="message">
-        To be honest, giving you that dog tag was one of the signs.
-    </p>
+.slide-4-in {
+    animation: slide4In 0.8s ease forwards;
+}
 
-    <p class="message">
-        I know our situation is complicated, and I know this might change
-        some things between us.
-    </p>
+@keyframes slide4In {
 
-    <p class="message">
-        So maybe on my next contract, kukunin ko na rin yung dog tag.
-        Not because I'm angry or anything, but I guess it's also my way
-        of showing respect for whatever happens after this.
-    </p>
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
 
-    <p class="message">
-        I'm really sorry, Trixie.
-        I genuinely hope maging okay pa rin tayo kahit papaano.
-    </p>
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
-    <p class="message">
-        Good luck sa journey mo and mag-iingat ka palagi.
-        I'll pray for your safety and peace of mind.
-    </p>
+}
 
-    <p class="signature">
-        — Cadet
-    </p>
-</div>
 
 /* NAVIGATION */
 
