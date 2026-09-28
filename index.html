@@ -141,6 +141,11 @@ button:hover {
 
     box-shadow:
         0 20px 50px rgba(70,55,15,0.2);
+
+    min-height: 400px;
+
+    position: relative;
+    overflow: hidden;
 }
 
 .message {
@@ -162,6 +167,101 @@ button:hover {
         cursive;
 
     color: #897217;
+}
+
+
+/* SLIDES */
+
+.slide {
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+
+/* SLIDE 1 */
+
+.slide-1-in {
+    animation: slide1In 0.7s ease forwards;
+}
+
+@keyframes slide1In {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* SLIDE 2 */
+
+.slide-2-in {
+    animation: slide2In 0.7s ease forwards;
+}
+
+@keyframes slide2In {
+
+    from {
+        opacity: 0;
+        transform: translateX(45px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* SLIDE 3 */
+
+.slide-3-in {
+    animation: slide3In 0.8s ease forwards;
+}
+
+@keyframes slide3In {
+
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* SLIDE 4 */
+
+.slide-4-in {
+    animation: slide4In 0.8s ease forwards;
+}
+
+@keyframes slide4In {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
 }
 
 
@@ -213,81 +313,6 @@ button:hover {
 
 .nav-button.next:hover {
     transform: translateX(4px);
-}
-
-
-/* SLIDE TRANSITIONS */
-
-.slide-out-left {
-    animation: slideOutLeft 0.45s ease forwards;
-}
-
-.slide-in-right {
-    animation: slideInRight 0.55s ease forwards;
-}
-
-.slide-out-right {
-    animation: slideOutRight 0.45s ease forwards;
-}
-
-.slide-in-left {
-    animation: slideInLeft 0.55s ease forwards;
-}
-
-@keyframes slideOutLeft {
-
-    from {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    to {
-        opacity: 0;
-        transform: translateX(-35px);
-    }
-
-}
-
-@keyframes slideInRight {
-
-    from {
-        opacity: 0;
-        transform: translateX(35px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-}
-
-@keyframes slideOutRight {
-
-    from {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    to {
-        opacity: 0;
-        transform: translateX(35px);
-    }
-
-}
-
-@keyframes slideInLeft {
-
-    from {
-        opacity: 0;
-        transform: translateX(-35px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
 }
 
 
@@ -438,50 +463,123 @@ button:hover {
 
     <div class="paper">
 
-        <div class="message">
 
-            <p>
-                Hey. I know this is super random,
-                but hear me out.
-            </p>
+        <!-- SLIDE 1 -->
 
-            <p>
-                There's actually something I've been
-                wanting to tell you for a while.
-            </p>
+        <div class="slide active slide-1-in"
+             data-slide="1">
 
-            <p>
-                I wasn't really sure how to say it,
-                so I decided to write it down instead.
-            </p>
+            <div class="message">
 
-            <p>
-                Sample lang to para hindi mabasa ni Sarah muna yan sha HAHA.
-            </p>
+                <p>
+                    Hey. I know this is super random,
+                    but hear me out.
+                </p>
 
-            <p>
-                I just wanted you to know that you're
-                someone EMEEEEEE.....
-            </p>
+                <p>
+                    There's actually something I've been
+                    wanting to tell you for a while.
+                </p>
 
-            <p>
-                sana may chance bess no?
-                pag wala edi nomo nalang AHAHA
-            </p>
+                <p>
+                    I wasn't really sure how to say it,
+                    so I decided to write it down instead.
+                </p>
 
-            <div class="signature">
-                — Cadet
             </div>
 
         </div>
 
+
+        <!-- SLIDE 2 -->
+
+        <div class="slide"
+             data-slide="2">
+
+            <div class="message">
+
+                <p>
+                    Honestly, I don't even know if
+                    this is the best way to say it.
+                </p>
+
+                <p>
+                    I kept thinking about whether I
+                    should actually tell you or just
+                    keep it to myself.
+                </p>
+
+                <p>
+                    Sample lang to para hindi mabasa
+                    ni Sarah muna yan sha HAHA.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SLIDE 3 -->
+
+        <div class="slide"
+             data-slide="3">
+
+            <div class="message">
+
+                <p>
+                    But eventually, I figured that
+                    maybe you should know.
+                </p>
+
+                <p>
+                    I just wanted you to know that
+                    you're someone EMEEEEEE.....
+                </p>
+
+                <p>
+                    And yeah...
+                    sana may chance bess no?
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SLIDE 4 -->
+
+        <div class="slide"
+             data-slide="4">
+
+            <div class="message">
+
+                <p>
+                    That's pretty much what I wanted
+                    to say.
+                </p>
+
+                <p>
+                    Pag wala edi nomo nalang AHAHA.
+                </p>
+
+                <div class="signature">
+                    — Cadet
+                </div>
+
+            </div>
+
+        </div>
+
+
     </div>
 
+
+    <!-- NAVIGATION -->
 
     <div class="navigation">
 
         <button class="nav-button back"
-                onclick="goBack()">
+                onclick="previousSlide()">
             ‹ Back
         </button>
 
@@ -497,10 +595,16 @@ button:hover {
 
 <script>
 
+let currentSlide = 1;
+const totalSlides = 4;
+
+
 function openLetter() {
 
     const opening = document.getElementById("opening");
     const letter = document.getElementById("letter");
+
+    currentSlide = 1;
 
     letter.style.display = "block";
     letter.classList.remove("show");
@@ -517,11 +621,93 @@ function openLetter() {
 
         window.scrollTo(0, 0);
 
+        updateNavigation();
+
     }, 700);
 }
 
 
-function goBack() {
+function showSlide(newSlide, direction) {
+
+    const slides = document.querySelectorAll(".slide");
+
+    slides.forEach(slide => {
+        slide.classList.remove(
+            "active",
+            "slide-1-in",
+            "slide-2-in",
+            "slide-3-in",
+            "slide-4-in"
+        );
+    });
+
+
+    const selectedSlide =
+        document.querySelector(
+            `.slide[data-slide="${newSlide}"]`
+        );
+
+
+    selectedSlide.classList.add("active");
+
+
+    void selectedSlide.offsetWidth;
+
+
+    if (newSlide === 1) {
+        selectedSlide.classList.add("slide-1-in");
+    }
+
+    else if (newSlide === 2) {
+        selectedSlide.classList.add("slide-2-in");
+    }
+
+    else if (newSlide === 3) {
+        selectedSlide.classList.add("slide-3-in");
+    }
+
+    else if (newSlide === 4) {
+        selectedSlide.classList.add("slide-4-in");
+    }
+
+
+    window.scrollTo(0, 0);
+
+    updateNavigation();
+}
+
+
+function nextSlide() {
+
+    if (currentSlide >= totalSlides) {
+
+        goBackToBeginning();
+
+        return;
+    }
+
+    currentSlide++;
+
+    showSlide(currentSlide, "next");
+}
+
+
+function previousSlide() {
+
+    if (currentSlide === 1) {
+
+        goBackToBeginning();
+
+        return;
+    }
+
+    currentSlide--;
+
+    showSlide(currentSlide, "previous");
+}
+
+
+function goBackToBeginning() {
 
     const opening = document.getElementById("opening");
     const letter = document.getElementById("letter");
@@ -535,31 +721,44 @@ function goBack() {
 
     opening.classList.remove("fade-out");
 
+    currentSlide = 1;
+
     window.scrollTo(0, 0);
+
+    updateNavigation();
 }
 
 
-function nextSlide() {
+function updateNavigation() {
 
-    const paper = document.querySelector(".paper");
+    const backButton =
+        document.querySelector(".nav-button.back");
 
-    paper.classList.remove("slide-in-right");
+    const nextButton =
+        document.querySelector(".nav-button.next");
 
-    void paper.offsetWidth;
 
-    paper.classList.add("slide-out-left");
+    if (currentSlide === 1) {
 
-    setTimeout(() => {
+        backButton.innerHTML = "‹ Back";
 
-        paper.classList.remove("slide-out-left");
+    } else {
 
-        void paper.offsetWidth;
+        backButton.innerHTML = "‹ Previous";
 
-        paper.classList.add("slide-in-right");
+    }
 
-        window.scrollTo(0, 0);
 
-    }, 450);
+    if (currentSlide === totalSlides) {
+
+        nextButton.innerHTML = "Back to Beginning ›";
+
+    } else {
+
+        nextButton.innerHTML = "Continue ›";
+
+    }
+
 }
 
 </script>
