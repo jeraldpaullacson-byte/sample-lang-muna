@@ -96,7 +96,7 @@ button:hover {
     display: none;
     min-height: 100vh;
 
-    padding: 70px 20px 110px;
+    padding: 50px 20px 70px;
 
     background:
         radial-gradient(circle at 10% 10%, #fff2a9 0%, transparent 25%),
@@ -111,7 +111,6 @@ button:hover {
     display: block;
     animation: letterAppear 0.8s ease forwards;
 }
-
 @keyframes letterAppear {
 
     from {
@@ -131,7 +130,8 @@ button:hover {
 
 .paper {
     max-width: 750px;
-    margin: auto;
+
+    margin: 8vh auto 0;
 
     background: #fff7cf;
 
@@ -307,6 +307,7 @@ button:hover {
 @media (orientation: portrait) {
 
     .paper {
+        margin-top: 3vh;
         padding: 35px 25px;
     }
 
@@ -315,7 +316,7 @@ button:hover {
     }
 
     .navigation {
-        margin: 50px auto 0;
+        margin: 20px auto 0;
         padding: 0 20px 20px;
     }
 
@@ -332,6 +333,10 @@ button:hover {
 /* LANDSCAPE — TABLET + DESKTOP */
 
 @media (orientation: landscape) {
+
+    .paper {
+        margin-top: 6vh;
+    }
 
     .navigation {
         margin: 20px auto 0;
