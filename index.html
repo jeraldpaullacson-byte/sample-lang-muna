@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,10 +22,7 @@ body {
 
 /* OPENING SCREEN */
 
-#opening.fade-out {
-    opacity: 0;
-    transform: translateY(-20px);
-}
+#opening {
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -40,7 +38,19 @@ body {
 
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+#opening.fade-out {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.opening-content {
+    max-width: 600px;
 }
 
 .small-title {
@@ -109,6 +119,7 @@ button:hover {
 }
 
 @keyframes letterAppear {
+
     from {
         opacity: 0;
         transform: translateY(20px);
@@ -118,7 +129,10 @@ button:hover {
         opacity: 1;
         transform: translateY(0);
     }
+
 }
+
+/* PAPER */
 
 .paper {
     max-width: 750px;
@@ -147,11 +161,31 @@ button:hover {
     margin-top: 45px;
     text-align: right;
 
-    font-family: "Segoe Print",
-                 "Bradley Hand",
-                 cursive;
+    font-family:
+        "Segoe Print",
+        "Bradley Hand",
+        cursive;
 
     color: #897217;
+}
+
+/* BACK BUTTON */
+
+.back-button {
+    display: block;
+
+    margin: 0 auto 25px;
+
+    background: transparent;
+    color: #897217;
+
+    box-shadow: none;
+
+    padding: 8px 15px;
+}
+
+.back-button:hover {
+    transform: translateX(-3px);
 }
 
 /* FLOWERS */
@@ -159,7 +193,9 @@ button:hover {
 .flower {
     position: fixed;
     width: 110px;
+
     opacity: 0.55;
+
     pointer-events: none;
 }
 
@@ -171,6 +207,7 @@ button:hover {
 .flower-bottom {
     bottom: 15px;
     right: 15px;
+
     transform: rotate(180deg);
 }
 
@@ -195,9 +232,7 @@ button:hover {
 </style>
 </head>
 
-
 <body>
-
 
 <!-- FLOWERS -->
 
@@ -276,11 +311,14 @@ button:hover {
 
 <section id="letter">
 
+    <button class="back-button"
+            onclick="goBack()">
+        ← Back
+    </button>
+
     <div class="paper">
 
         <div class="message">
-
-            <!-- SAMPLE MESSAGE -->
 
             <p>
                 Hey. I know this is super random,
@@ -307,10 +345,8 @@ button:hover {
             </p>
 
             <p>
-                sana may chance bess no? pag wala edi nomo nalang AHAHA
-            </p>
-
-           
+                sana may chance bess no?
+                pag wala edi nomo nalang AHAHA
             </p>
 
             <div class="signature">
@@ -328,8 +364,11 @@ button:hover {
 
 function openLetter() {
 
-    const opening = document.getElementById("opening");
-    const letter = document.getElementById("letter");
+    const opening =
+        document.getElementById("opening");
+
+    const letter =
+        document.getElementById("letter");
 
     opening.classList.add("fade-out");
 
@@ -343,3 +382,32 @@ function openLetter() {
 
     }, 700);
 }
+
+
+function goBack() {
+
+    const opening =
+        document.getElementById("opening");
+
+    const letter =
+        document.getElementById("letter");
+
+    letter.style.display = "none";
+    letter.classList.remove("show");
+
+    opening.style.display = "flex";
+
+    setTimeout(() => {
+
+        opening.classList.remove("fade-out");
+
+    }, 50);
+
+    window.scrollTo(0, 0);
+}
+
+</script>
+
+</body>
+</html>
+```
