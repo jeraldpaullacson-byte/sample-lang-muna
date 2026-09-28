@@ -90,13 +90,13 @@ button:hover {
     transform: translateY(-3px);
 }
 
-/* LETTER */
+/* LETTER / SLIDES */
 
 #letter {
     display: none;
     min-height: 100vh;
 
-    padding: 70px 20px;
+    padding: 70px 20px 110px;
 
     background:
         radial-gradient(circle at 10% 10%, #fff2a9 0%, transparent 25%),
@@ -125,6 +125,7 @@ button:hover {
     }
 
 }
+
 
 /* PAPER */
 
@@ -163,25 +164,155 @@ button:hover {
     color: #897217;
 }
 
-/* BACK BUTTON */
 
-.back-button {
-    display: block;
+/* NAVIGATION */
 
-    margin: 0 auto 25px;
+.navigation {
+    position: fixed;
 
+    bottom: 20px;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 25px;
+
+    z-index: 10;
+}
+
+.nav-button {
     background: transparent;
     color: #897217;
 
+    border: none;
+
+    padding: 12px 8px;
+
+    font-family: Georgia, serif;
+    font-size: 15px;
+
+    letter-spacing: 0.5px;
+
     box-shadow: none;
 
-    padding: 8px 15px;
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
 }
 
-.back-button:hover {
-    transform: translateX(-3px);
+.nav-button:hover {
+    transform: none;
 }
 
+.nav-button.back:hover {
+    transform: translateX(-4px);
+}
+
+.nav-button.next:hover {
+    transform: translateX(4px);
+}
+
+
+/* SLIDE TRANSITIONS */
+
+.slide-out-left {
+    animation: slideOutLeft 0.45s ease forwards;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.55s ease forwards;
+}
+
+.slide-out-right {
+    animation: slideOutRight 0.45s ease forwards;
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.55s ease forwards;
+}
+
+@keyframes slideOutLeft {
+
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(-35px);
+    }
+
+}
+
+@keyframes slideInRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes slideOutRight {
+
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(35px);
+    }
+
+}
+
+@keyframes slideInLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .paper {
+        padding: 35px 25px;
+    }
+
+    .message {
+        font-size: 16px;
+    }
+
+    .navigation {
+        bottom: 15px;
+        padding: 0 20px;
+    }
+
+    .nav-button {
+        font-size: 14px;
+    }
+
+}
 /* FLOWERS */
 
 .flower {
@@ -305,11 +436,6 @@ button:hover {
 
 <section id="letter">
 
-    <button class="back-button"
-            onclick="goBack()">
-        ← Back
-    </button>
-
     <div class="paper">
 
         <div class="message">
@@ -351,6 +477,21 @@ button:hover {
 
     </div>
 
+
+    <div class="navigation">
+
+        <button class="nav-button back"
+                onclick="goBack()">
+            ‹ Back
+        </button>
+
+        <button class="nav-button next"
+                onclick="nextSlide()">
+            Continue ›
+        </button>
+
+    </div>
+
 </section>
 
 
@@ -361,18 +502,15 @@ function openLetter() {
     const opening = document.getElementById("opening");
     const letter = document.getElementById("letter");
 
-    // Reset letter state
     letter.style.display = "block";
     letter.classList.remove("show");
 
-    // Fade out opening
     opening.classList.add("fade-out");
 
     setTimeout(() => {
 
         opening.style.display = "none";
 
-        // Force animation to restart
         void letter.offsetWidth;
 
         letter.classList.add("show");
@@ -388,20 +526,40 @@ function goBack() {
     const opening = document.getElementById("opening");
     const letter = document.getElementById("letter");
 
-    // Hide letter completely
     letter.classList.remove("show");
     letter.style.display = "none";
 
-    // Reset opening state
     opening.style.display = "flex";
 
-    // Force browser to recognize the reset
     void opening.offsetWidth;
 
-    // Remove fade-out state
     opening.classList.remove("fade-out");
 
     window.scrollTo(0, 0);
+}
+
+
+function nextSlide() {
+
+    const paper = document.querySelector(".paper");
+
+    paper.classList.remove("slide-in-right");
+
+    void paper.offsetWidth;
+
+    paper.classList.add("slide-out-left");
+
+    setTimeout(() => {
+
+        paper.classList.remove("slide-out-left");
+
+        void paper.offsetWidth;
+
+        paper.classList.add("slide-in-right");
+
+        window.scrollTo(0, 0);
+
+    }, 450);
 }
 
 </script>
