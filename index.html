@@ -290,9 +290,9 @@ button:hover {
 }
 
 .nav-button:hover {
+    transform: translateY(-2px);
     opacity: 0.7;
 }
-
 .nav-button.back:hover {
     transform: translateX(-4px);
 }
@@ -302,10 +302,10 @@ button:hover {
 }
 
 
-/* PORTRAIT — PHONE + TABLET */
+/* MOBILE */
 
+/* Portrait — phone + tablet */
 @media (orientation: portrait) {
-
     .paper {
         padding: 35px 25px;
     }
@@ -315,7 +315,7 @@ button:hover {
     }
 
     .navigation {
-        margin: 50px auto 0;
+        margin: 20px auto 0;
         padding: 0 20px 20px;
     }
 
@@ -328,15 +328,68 @@ button:hover {
     }
 }
 
-
-/* LANDSCAPE — TABLET + DESKTOP */
-
+/* Landscape — tablet + desktop */
 @media (orientation: landscape) {
-
     .navigation {
         margin: 20px auto 0;
     }
 }
+/* FLOWERS */
+
+.flower {
+    position: fixed;
+    width: 110px;
+
+    opacity: 0.55;
+
+    pointer-events: none;
+}
+
+.flower-top {
+    top: 15px;
+    left: 15px;
+}
+
+.flower-bottom {
+    bottom: 15px;
+    right: 15px;
+
+    transform: rotate(180deg);
+}
+
+/* MOBILE */
+
+/* Portrait — phone + tablet */
+@media (orientation: portrait) {
+    .paper {
+        padding: 35px 25px;
+    }
+
+    .message {
+        font-size: 16px;
+    }
+
+    .navigation {
+        margin: 20px auto 0;
+        padding: 0 20px 20px;
+    }
+
+    .nav-button {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+}
+
+/* Landscape — tablet + desktop */
+@media (orientation: landscape) {
+    .navigation {
+        margin: 20px auto 0;
+    }
+}
+
 </style>
 </head>
 
