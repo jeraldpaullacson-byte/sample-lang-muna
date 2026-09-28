@@ -119,7 +119,7 @@ button:hover {
 
     min-height: 100vh;
 
-    padding: 70px 20px 90px;
+    padding: 40px 20px 50px;
 
     background:
         radial-gradient(circle at 10% 10%, #fff2a9 0%, transparent 25%),
@@ -128,25 +128,17 @@ button:hover {
 
     opacity: 0;
     transform: translateY(20px);
+
+    /* Center the whole letter area */
+    align-content: center;
 }
 
 #letter.show {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     animation: letterAppear 0.8s ease forwards;
-}
-
-@keyframes letterAppear {
-
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
 }
 
 
@@ -160,7 +152,7 @@ button:hover {
 
     min-height: 500px;
 
-    margin: auto;
+    margin: 0 auto;
 
     padding: 55px 45px;
 
@@ -262,7 +254,6 @@ button:hover {
 ========================= */
 
 .navigation {
-
     width: 100%;
     max-width: 750px;
 
@@ -358,35 +349,13 @@ button:hover {
 
 @media (max-width: 600px) {
 
-    #opening {
-        padding: 25px;
-    }
-
-    h1 {
-        font-size: 34px;
-    }
-
-    .small-title {
-        font-size: 12px;
-        letter-spacing: 3px;
-    }
-
-    .subtitle {
-        font-size: 16px;
-    }
-
     #letter {
         padding:
-            35px
-            15px
-            60px;
+            25px 15px 40px;
     }
 
     .paper {
-
-        padding:
-            35px 25px;
-
+        padding: 35px 25px;
         min-height: 480px;
     }
 
@@ -400,9 +369,7 @@ button:hover {
         padding: 0 5px;
     }
 
-    .nav-button {
-        font-size: 14px;
-    }
+}
 
     .flower {
         width: 42px;
