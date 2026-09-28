@@ -380,17 +380,22 @@ button:hover {
 
 function openLetter() {
 
-    const opening =
-        document.getElementById("opening");
+    const opening = document.getElementById("opening");
+    const letter = document.getElementById("letter");
 
-    const letter =
-        document.getElementById("letter");
+    // Reset letter state
+    letter.style.display = "block";
+    letter.classList.remove("show");
 
+    // Fade out opening
     opening.classList.add("fade-out");
 
     setTimeout(() => {
 
         opening.style.display = "none";
+
+        // Force animation to restart
+        void letter.offsetWidth;
 
         letter.classList.add("show");
 
@@ -402,22 +407,21 @@ function openLetter() {
 
 function goBack() {
 
-    const opening =
-        document.getElementById("opening");
+    const opening = document.getElementById("opening");
+    const letter = document.getElementById("letter");
 
-    const letter =
-        document.getElementById("letter");
-
-    letter.style.display = "none";
+    // Hide letter completely
     letter.classList.remove("show");
+    letter.style.display = "none";
 
+    // Reset opening state
     opening.style.display = "flex";
 
-    setTimeout(() => {
+    // Force browser to recognize the reset
+    void opening.offsetWidth;
 
-        opening.classList.remove("fade-out");
-
-    }, 50);
+    // Remove fade-out state
+    opening.classList.remove("fade-out");
 
     window.scrollTo(0, 0);
 }
@@ -426,4 +430,3 @@ function goBack() {
 
 </body>
 </html>
-```
