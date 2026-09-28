@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,45 +13,33 @@
     box-sizing: border-box;
 }
 
-html, body {
-    margin: 0;
-    min-height: 100%;
-}
-
 body {
+    margin: 0;
     font-family: Georgia, serif;
     color: #4a4025;
     background: #f4df78;
-    overflow-x: hidden;
 }
 
-
-/* =========================
-   OPENING SCREEN
-========================= */
+/* OPENING SCREEN */
 
 #opening {
     min-height: 100vh;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     text-align: center;
-
-    padding: 30px;
 
     background:
         radial-gradient(circle at 20% 20%, #fff4b5 0%, transparent 30%),
         radial-gradient(circle at 80% 80%, #e9ce55 0%, transparent 35%),
         #f4df78;
 
+    padding: 30px;
+
     opacity: 1;
     transform: translateY(0);
 
-    transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
+    transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
 #opening.fade-out {
@@ -79,10 +68,7 @@ h1 {
     margin-bottom: 35px;
 }
 
-
-/* =========================
-   BUTTON
-========================= */
+/* BUTTON */
 
 button {
     border: none;
@@ -93,33 +79,24 @@ button {
     border-radius: 30px;
 
     font-size: 16px;
-    font-family: Georgia, serif;
-
     cursor: pointer;
 
     box-shadow: 0 8px 20px rgba(80,60,10,0.2);
 
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+    transition: 0.3s;
 }
 
 button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 11px 24px rgba(80,60,10,0.25);
 }
 
-
-/* =========================
-   LETTER
-========================= */
+/* LETTER / SLIDES */
 
 #letter {
     display: none;
-
     min-height: 100vh;
 
-    padding: 70px 20px 90px;
+    padding: 70px 20px 110px;
 
     background:
         radial-gradient(circle at 10% 10%, #fff2a9 0%, transparent 25%),
@@ -150,36 +127,26 @@ button:hover {
 }
 
 
-/* =========================
-   PAPER
-========================= */
+/* PAPER */
 
 .paper {
-    width: 100%;
     max-width: 750px;
-
-    min-height: 500px;
-
     margin: auto;
 
-    padding: 55px 45px;
-
     background: #fff7cf;
+
+    padding: 55px 45px;
 
     border-radius: 4px;
 
     box-shadow:
         0 20px 50px rgba(70,55,15,0.2);
 
-    position: relative;
+    min-height: 500px;
 
+    position: relative;
     overflow: hidden;
 }
-
-
-/* =========================
-   MESSAGE
-========================= */
 
 .message {
     font-size: 18px;
@@ -187,12 +154,11 @@ button:hover {
 }
 
 .message p {
-    margin: 0 0 25px;
+    margin-bottom: 25px;
 }
 
 .signature {
     margin-top: 45px;
-
     text-align: right;
 
     font-family:
@@ -204,9 +170,7 @@ button:hover {
 }
 
 
-/* =========================
-   SLIDES
-========================= */
+/* SLIDES */
 
 .slide {
     display: none;
@@ -217,12 +181,34 @@ button:hover {
 }
 
 
-/* Slide enters from RIGHT */
-.slide.next-in {
-    animation: nextSlideIn 0.55s ease forwards;
+/* SLIDE 1 */
+
+.slide-1-in {
+    animation: slide1In 0.7s ease forwards;
 }
 
-@keyframes nextSlideIn {
+@keyframes slide1In {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* SLIDE 2 */
+
+.slide-2-in {
+    animation: slide2In 0.7s ease forwards;
+}
+
+@keyframes slide2In {
 
     from {
         opacity: 0;
@@ -237,79 +223,76 @@ button:hover {
 }
 
 
-/* Slide enters from LEFT */
-.slide.previous-in {
-    animation: previousSlideIn 0.55s ease forwards;
+/* SLIDE 3 */
+
+.slide-3-in {
+    animation: slide3In 0.8s ease forwards;
 }
 
-@keyframes previousSlideIn {
+@keyframes slide3In {
 
     from {
         opacity: 0;
-        transform: translateX(-45px);
+        transform: scale(0.96);
     }
 
     to {
         opacity: 1;
-        transform: translateX(0);
+        transform: scale(1);
     }
 
 }
 
 
-/* =========================
-   NAVIGATION
-========================= */
+/* SLIDE 4 */
+
+.slide-4-in {
+    animation: slide4In 0.8s ease forwards;
+}
+
+@keyframes slide4In {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* NAVIGATION */
 
 .navigation {
-
+    position: relative;
     width: 100%;
     max-width: 750px;
-
-    margin: 25px auto 0;
-
-    padding: 0 5px;
-
+    margin: 50px auto 0;
+    padding: 0 10px 20px;
     display: flex;
-
     justify-content: space-between;
     align-items: center;
+    z-index: 10;
 }
 
 .nav-button {
-
-    background: transparent;
-
+    background: none;
     border: none;
-
     color: #6b5a20;
-
-    font-family: Georgia, serif;
-
     font-size: 15px;
-
-    padding: 10px 5px;
-
     cursor: pointer;
-
-    box-shadow: none;
-
-    border-radius: 0;
-
-    transition:
-        transform 0.25s ease,
-        opacity 0.25s ease;
+    padding: 12px 8px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .nav-button:hover {
-
-    box-shadow: none;
-
     transform: translateY(-2px);
-
     opacity: 0.7;
 }
-
 .nav-button.back:hover {
     transform: translateX(-4px);
 }
@@ -319,119 +302,100 @@ button:hover {
 }
 
 
-/* =========================
-   FLOWERS
-========================= */
+/* MOBILE */
 
-.flower {
-
-    position: fixed;
-
-    width: 58px;
-    height: 58px;
-
-    opacity: 0.45;
-
-    pointer-events: none;
-
-    z-index: 20;
-}
-
-.flower-top {
-
-    top: 12px;
-    left: 12px;
-}
-
-.flower-bottom {
-
-    bottom: 12px;
-    right: 12px;
-
-    transform: rotate(180deg);
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 600px) {
-
-    #opening {
-        padding: 25px;
-    }
-
-    h1 {
-        font-size: 34px;
-    }
-
-    .small-title {
-        font-size: 12px;
-        letter-spacing: 3px;
-    }
-
-    .subtitle {
-        font-size: 16px;
-    }
-
-    #letter {
-        padding:
-            35px
-            15px
-            60px;
-    }
-
+/* Portrait — phone + tablet */
+@media (orientation: portrait) {
     .paper {
-
-        padding:
-            35px 25px;
-
-        min-height: 480px;
+        padding: 35px 25px;
     }
 
     .message {
         font-size: 16px;
-        line-height: 1.9;
     }
 
     .navigation {
-        margin-top: 20px;
-        padding: 0 5px;
+        margin: 20px auto 0;
+        padding: 0 20px 20px;
     }
 
     .nav-button {
         font-size: 14px;
     }
 
-    .flower {
-        width: 42px;
-        height: 42px;
-        opacity: 0.35;
+    h1 {
+        font-size: 34px;
+    }
+}
+
+/* Landscape — tablet + desktop */
+@media (orientation: landscape) {
+    .navigation {
+        margin: 20px auto 0;
+    }
+}
+/* FLOWERS */
+
+.flower {
+    position: fixed;
+    width: 110px;
+
+    opacity: 0.55;
+
+    pointer-events: none;
+}
+
+.flower-top {
+    top: 15px;
+    left: 15px;
+}
+
+.flower-bottom {
+    bottom: 15px;
+    right: 15px;
+
+    transform: rotate(180deg);
+}
+
+/* MOBILE */
+
+/* Portrait — phone + tablet */
+@media (orientation: portrait) {
+    .paper {
+        padding: 35px 25px;
     }
 
-    .flower-top {
-        top: 8px;
-        left: 8px;
+    .message {
+        font-size: 16px;
     }
 
-    .flower-bottom {
-        bottom: 8px;
-        right: 8px;
+    .navigation {
+        margin: 20px auto 0;
+        padding: 0 20px 20px;
     }
 
+    .nav-button {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+}
+
+/* Landscape — tablet + desktop */
+@media (orientation: landscape) {
+    .navigation {
+        margin: 20px auto 0;
+    }
 }
 
 </style>
 </head>
 
-
 <body>
 
-
-<!-- =========================
-     FLOWERS
-========================= -->
+<!-- FLOWERS -->
 
 <svg class="flower flower-top"
      viewBox="0 0 100 100">
@@ -475,9 +439,7 @@ button:hover {
 </svg>
 
 
-<!-- =========================
-     OPENING
-========================= -->
+<!-- OPENING -->
 
 <section id="opening">
 
@@ -506,9 +468,7 @@ button:hover {
 </section>
 
 
-<!-- =========================
-     LETTER
-========================= -->
+<!-- LETTER -->
 
 <section id="letter">
 
@@ -517,7 +477,7 @@ button:hover {
 
         <!-- SLIDE 1 -->
 
-        <div class="slide active"
+        <div class="slide active slide-1-in"
              data-slide="1">
 
             <div class="message">
@@ -647,76 +607,49 @@ button:hover {
 <script>
 
 let currentSlide = 1;
-
 const totalSlides = 4;
 
 
-/* =========================
-   OPEN LETTER
-========================= */
-
 function openLetter() {
 
-    const opening =
-        document.getElementById("opening");
-
-    const letter =
-        document.getElementById("letter");
-
+    const opening = document.getElementById("opening");
+    const letter = document.getElementById("letter");
 
     currentSlide = 1;
 
-
     letter.style.display = "block";
-
     letter.classList.remove("show");
 
-
     opening.classList.add("fade-out");
-
 
     setTimeout(() => {
 
         opening.style.display = "none";
 
-
         void letter.offsetWidth;
-
 
         letter.classList.add("show");
 
-
-        window.scrollTo({
-            top: 0,
-            behavior: "instant"
-        });
-
+        window.scrollTo(0, 0);
 
         updateNavigation();
 
     }, 700);
-
 }
 
 
-/* =========================
-   SHOW SLIDE
-========================= */
-
 function showSlide(newSlide, direction) {
 
-    const slides =
-        document.querySelectorAll(".slide");
-
+    const slides = document.querySelectorAll(".slide");
 
     slides.forEach(slide => {
-
         slide.classList.remove(
             "active",
-            "next-in",
-            "previous-in"
+            "slide-1-in",
+            "slide-2-in",
+            "slide-3-in",
+            "slide-4-in"
         );
-
     });
 
 
@@ -732,31 +665,28 @@ function showSlide(newSlide, direction) {
     void selectedSlide.offsetWidth;
 
 
-    if (direction === "next") {
+    if (newSlide === 1) {
+        selectedSlide.classList.add("slide-1-in");
+    }
 
-        selectedSlide.classList.add("next-in");
+    else if (newSlide === 2) {
+        selectedSlide.classList.add("slide-2-in");
+    }
 
-    } else {
+    else if (newSlide === 3) {
+        selectedSlide.classList.add("slide-3-in");
+    }
 
-        selectedSlide.classList.add("previous-in");
-
+    else if (newSlide === 4) {
+        selectedSlide.classList.add("slide-4-in");
     }
 
 
-    window.scrollTo({
-        top: 0,
-        behavior: "instant"
-    });
-
+    window.scrollTo(0, 0);
 
     updateNavigation();
-
 }
 
-
-/* =========================
-   NEXT
-========================= */
 
 function nextSlide() {
 
@@ -765,24 +695,13 @@ function nextSlide() {
         goBackToBeginning();
 
         return;
-
     }
-
 
     currentSlide++;
 
-
-    showSlide(
-        currentSlide,
-        "next"
-    );
-
+    showSlide(currentSlide, "next");
 }
 
-
-/* =========================
-   PREVIOUS
-========================= */
 
 function previousSlide() {
 
@@ -791,65 +710,35 @@ function previousSlide() {
         goBackToBeginning();
 
         return;
-
     }
-
 
     currentSlide--;
 
-
-    showSlide(
-        currentSlide,
-        "previous"
-    );
-
+    showSlide(currentSlide, "previous");
 }
 
-
-/* =========================
-   BACK TO BEGINNING
-========================= */
 
 function goBackToBeginning() {
 
-    const opening =
-        document.getElementById("opening");
-
-    const letter =
-        document.getElementById("letter");
-
+    const opening = document.getElementById("opening");
+    const letter = document.getElementById("letter");
 
     letter.classList.remove("show");
-
     letter.style.display = "none";
-
 
     opening.style.display = "flex";
 
-
     void opening.offsetWidth;
-
 
     opening.classList.remove("fade-out");
 
-
     currentSlide = 1;
 
-
-    window.scrollTo({
-        top: 0,
-        behavior: "instant"
-    });
-
+    window.scrollTo(0, 0);
 
     updateNavigation();
-
 }
 
-
-/* =========================
-   NAVIGATION TEXT
-========================= */
 
 function updateNavigation() {
 
@@ -862,26 +751,22 @@ function updateNavigation() {
 
     if (currentSlide === 1) {
 
-        backButton.innerHTML =
-            "‹ Back";
+        backButton.innerHTML = "‹ Back";
 
     } else {
 
-        backButton.innerHTML =
-            "‹ Previous";
+        backButton.innerHTML = "‹ Previous";
 
     }
 
 
     if (currentSlide === totalSlides) {
 
-        nextButton.innerHTML =
-            "Back to Beginning ›";
+        nextButton.innerHTML = "Back to Beginning ›";
 
     } else {
 
-        nextButton.innerHTML =
-            "Continue ›";
+        nextButton.innerHTML = "Continue ›";
 
     }
 
