@@ -304,8 +304,8 @@ button:hover {
 
 /* MOBILE */
 
-@media (max-width: 600px) {
-
+/* Portrait — phone + tablet */
+@media (orientation: portrait) {
     .paper {
         padding: 35px 25px;
     }
@@ -315,14 +315,24 @@ button:hover {
     }
 
     .navigation {
-        bottom: 15px;
-        padding: 0 20px;
+        margin: 50px auto 0;
+        padding: 0 20px 20px;
     }
 
     .nav-button {
         font-size: 14px;
     }
 
+    h1 {
+        font-size: 34px;
+    }
+}
+
+/* Landscape — tablet + desktop */
+@media (orientation: landscape) {
+    .navigation {
+        margin: 20px auto 0;
+    }
 }
 /* FLOWERS */
 
@@ -349,12 +359,8 @@ button:hover {
 
 /* MOBILE */
 
-@media (max-width: 600px) {
-
-    h1 {
-        font-size: 34px;
-    }
-
+/* Portrait — phone + tablet */
+@media (orientation: portrait) {
     .paper {
         padding: 35px 25px;
     }
@@ -363,6 +369,25 @@ button:hover {
         font-size: 16px;
     }
 
+    .navigation {
+        margin: 50px auto 0;
+        padding: 0 20px 20px;
+    }
+
+    .nav-button {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+}
+
+/* Landscape — tablet + desktop */
+@media (orientation: landscape) {
+    .navigation {
+        margin: 20px auto 0;
+    }
 }
 
 </style>
